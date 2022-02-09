@@ -1,0 +1,4 @@
+MOV AH,0EH
+MOV AL,'A'
+INT 10H
+RET

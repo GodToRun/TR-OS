@@ -1,0 +1,11 @@
+PRINT:
+LODSB
+OR      AL,AL
+JZ      DONE
+
+MOV     AH,0X0E
+INT     10H
+JMP     PRINT
+
+DONE:
+RET

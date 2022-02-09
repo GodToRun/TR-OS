@@ -1,0 +1,22 @@
+BITS    16
+; INITIALIZE REGISTERS
+MOV     AX,CS
+MOV     DS,AX
+MOV     ES,AX
+MOV     AX,0X7000
+MOV     SS,AX
+MOV     SP,SS
+
+MOV     AL,03H
+MOV     AH,0
+INT     10H
+
+MOV     SI,LOADMSG1
+CALL    PRINT
+; MAIN FUNCTION
+
+MAIN:
+JMP     SHELL_MAIN
+
+LOADMSG1    DB  'Kernel Initialize Successed!',13,10,0
+%INCLUDE    'SHELL.ASM'
